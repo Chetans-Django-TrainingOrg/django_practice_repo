@@ -1,5 +1,5 @@
 # djangoProjects
-These are all my django projects which I created during my learning.
+These are all my django projects which I created for practical learning.
 
 # Repository Structure
 
