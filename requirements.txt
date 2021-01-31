@@ -1,0 +1,4 @@
+django
+faker
+requests
+mysqlclient
