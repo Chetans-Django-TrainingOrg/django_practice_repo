@@ -1,4 +1,4 @@
-"""django_07AdvTemplates URL Configuration
+"""django_17RESTAPIS URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -14,14 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from atapp import views
-from filtersApp import views as filterViews
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.athandler),
-    path('movies', views.movies),
-    path('tfilters', views.templateFilters),
-    path('customfilter', filterViews.templateFilterDemo),
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
+from .views import FileView
+
+urlpatterns = [
+    path('upload', FileView.as_view()),
 ]

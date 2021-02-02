@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from cookiesapp import views as cookiesappViews
+from cookieCart import views as cookieCartViews
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cookieset/', cookiesappViews.index),
+    path('cookietest/', cookiesappViews.check_view),
+    path('nameform/', cookiesappViews.homepage),
+    path('date/', cookiesappViews.dateTimeView),
+    path('age/', cookiesappViews.ageview),
+    path('edu/', cookiesappViews.eduview),
+    path('result/', cookiesappViews.resultView),
+    path('home/', cookieCartViews.home),
+    path('add/', cookieCartViews.additem),
+    path('display/', cookieCartViews.displayitems),
 ]

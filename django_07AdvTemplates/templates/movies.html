@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load custom_filters %}
+{% block customcss %}
+<link rel="stylesheet" href="{% static 'movies.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<div><h1> Welcome to Django Movies Channel </h1></div>
+{% for d,v in data.items %}
+<h1>{{v|fnlower:7}}</h1>
+{% endfor %}
+
+{% endblock %}

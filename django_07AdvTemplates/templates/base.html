@@ -1,13 +1,32 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Django: Advanced Template Features</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'advtemplates.css' %}">
+    {% block customcss %} {% endblock %}
 </head>
 <body>
-{% block cblock %}
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-header" href="/">
+                News
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="">Home</a> </li>
+            <li><a href="movies">Movies</a> </li>
+            <li><a href="sports">Sports</a> </li>
+            <li><a href="politics">Politics</a> </li>
 
-Anything inside this will be a child block
+        </ul>
+
+    </div>
+</nav>
+{% block body_block %}
 
 {% endblock %}
 </body>

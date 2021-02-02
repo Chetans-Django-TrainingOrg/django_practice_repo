@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies Cart</title>
+</head>
+<body>
+<h1> Cookies Cart Data </h1>
+{% if request.COOKIES %}
+<table border="2">
+    <thead>
+    <th>Cookie Name</th>
+    <th>Cookie Price</th>
+    </thead>
+    {% for key,value in request.COOKIES.items %}
+    {% if key == "csrftoken" %}
+        <tr>
+        <td>TOKEN</td>
+        <td>TOKEN</td>
+    </tr>
+
+    {% else %}
+    <tr>
+        <td> {{key}}</td>
+        <td> Rs {{value}} /-</td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+
+</table>
+{% else %}
+<p> no Cookies in the cart yet </p>
+{% endif %}
+</body>
+</html>
