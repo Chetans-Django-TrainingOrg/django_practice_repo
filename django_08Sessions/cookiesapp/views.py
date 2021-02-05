@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from cookiesapp.forms import *
-
 import datetime
+
 # Create your views here.
 def index(request):
     request.session.set_test_cookie()
@@ -28,12 +27,11 @@ def check_view(request):
 #Cookies in action, Form handling
 
 def homepage(request):
-    form = NameForm()
     return render(request,"nameform.html",{"form":form})
 
 def dateTimeView(request):
     name = request.GET['name']
-    form = AgeForm()
+
 
     response = render(request,"datetime.html",{"name":name})
     response.set_cookie('name',name)
