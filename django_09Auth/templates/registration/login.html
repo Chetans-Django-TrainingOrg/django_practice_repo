@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'main.html'%}
+
+      {%block body_block%}
+<div class="jumbotron">
+       <div class="container" align='center'>
+         <h1>Login to View Account Details...</h1>
+         <form  method="post">
+           {{form.as_p}}
+           {%csrf_token%}
+           <button type="submit" class='btn btn-lg btn-primary'>Login</button>
+         </form>
+       </div>
+</div>
+{%endblock%}

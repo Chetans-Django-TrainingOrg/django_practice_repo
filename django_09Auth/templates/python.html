@@ -1,0 +1,12 @@
+{% extends 'profile.html' %}
+{% block body_block %}
+<div class="jumbotron">
+    <div class="container" align="center">
+        <h1>Hey {{username}}, Welcome To PYTHON Exam</h1>
+    </div>
+</div>
+<script>
+var user = document.getElementById('userinfo')
+user.innerHTML='<a href="#">{{username|title}}</a>'
+</script>
+{% endblock %}
