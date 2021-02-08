@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block body_block %}
+
+<h1>List Of All Companies </h1><hr>
+<ol>
+    {% for c in company_list %}
+    <h2><li><a href="/{{c.id}}">{{c.name|upper}}</a></li></h2>
+    {% endfor %}
+</ol>
+{% endblock %}

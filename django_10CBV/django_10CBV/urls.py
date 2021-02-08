@@ -15,7 +15,28 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from cbvapp import views as cbvv
+from cbvcrudapp import views as cbvcrudv
+from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('helloworld/', cbvv.HelloWorld.as_view()),
+    path('templateview/', cbvv.TemplateCBV.as_view()),
+    path('employee/', cbvv.EmployeeView.as_view()),
+    path('addemployee/', cbvv.addemployee),
+    path('companies/', cbvv.CompanyView.as_view()),
+
+# Info about RegEx : https://www.regular-expressions.info/refext.html#:~:text=no-,no,must%20start%20with%20a%20letter.
+# P stands for Placeholder or Pattern
+#     url(r'^(?P<pk>\d+)/$', cbvv.CompanyDetailView.as_view(),name='detail1'),
+    path('addco/', cbvv.addcompanies),
+
+    #crud urls
+    url(r'^(?P<pk>\d+)/$', cbvcrudv.CompanyDetailView.as_view(),name='detail'),
+    path('addcompany', cbvcrudv.CompanyCreateView.as_view()),
+    url(r'^update/(?P<pk>\d+)/$', cbvcrudv.CompanyUpdateView.as_view()),
+    path('co/', cbvcrudv.CompanyView.as_view(),name='co'),
+    url(r'^delete/(?P<pk>\d+)/$', cbvcrudv.CompanyDeleteView.as_view(),name='delete'),
+
+
 ]

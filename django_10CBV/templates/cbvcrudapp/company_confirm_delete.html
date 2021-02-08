@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Delete {{company.name}} ? <hr>
+<form method="post">
+    {% csrf_token %}
+    <input type="submit">
+    <a href="/{{company.id}}">Cancel</a>
+
+</form>
+</body>
+</html>
